@@ -13,7 +13,6 @@ void WaterCard::copy(const WaterCard& newCard)
 
 void WaterCard::erase()
 {
-	std::cout << "deleting water " << this->cardName;
 	delete[] this->cardName;
 }
 

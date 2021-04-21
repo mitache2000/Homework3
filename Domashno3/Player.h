@@ -74,6 +74,12 @@ public:
 		}
 	}
 
+	char* getName() const
+	{
+		return this->name;
+	}
+
+
 	int drawCard()
 	{
 		srand(time(NULL));

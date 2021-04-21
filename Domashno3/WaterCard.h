@@ -13,10 +13,7 @@ private:
 
 public:
 	WaterCard() {
-		cardName = new char[100];
-		power = 0;
-		bonusPower = 0;
-		type = 0;
+		
 	}
 	WaterCard(const char* newCardName, int newPower, int newBonusPower, int newType);
 	WaterCard(const WaterCard& newCard);

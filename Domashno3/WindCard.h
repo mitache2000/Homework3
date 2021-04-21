@@ -13,10 +13,7 @@ private:
 
 public:
 	WindCard() {
-		cardName = new char[100];
-		power = 0;
-		bonusPower = 0;
-		type = 0;
+		
 	}
 	WindCard(const char* newCardName, int newPower, int newBonusPower, int newType);
 	WindCard(const WindCard& newCard);
