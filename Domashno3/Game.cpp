@@ -18,9 +18,9 @@ void Game::play()
 	waterDeck.addCard(card5);
 	waterDeck.addCard(card6);
 
-	Player<EarthCard, WaterCard>* player1 = new Player<EarthCard, WaterCard>("Ivan", 1, 2);
-	player1->assignDeck1(earthDeck);
-	player1->assignDeck2(waterDeck);
+	Player<EarthCard, WaterCard> player1("Ivan", 1, 2);
+	player1.assignDeck1(earthDeck);
+	player1.assignDeck2(waterDeck);
 
 
 	FireCard card1("cardGgg", 5, 2, 1);
@@ -40,12 +40,12 @@ void Game::play()
 	windDeck.addCard(card11);
 	windDeck.addCard(card12);
 
-	Player<FireCard, WindCard>* player2 = new Player<FireCard, WindCard>("Pesho", 1, 2);
-	player2->assignDeck1(fireDeck);
-	player2->assignDeck2(windDeck);
+	Player<FireCard, WindCard> player2("Pesho", 1, 2);
+	player2.assignDeck1(fireDeck);
+	player2.assignDeck2(windDeck);
 	int player1Points = 0;
 	int player2Points = 0;
-	while (true) {
+	/*while (true) {
 		int player1Power = player1->drawCard();
 		int player2Power = player2->drawCard();
 		if (player1Power > player2Power) {
@@ -69,10 +69,7 @@ void Game::play()
 			break;
 		}
 
-	}
-
-	delete player1;
-	delete player2;
+	}*/
 
 
 }

@@ -19,7 +19,7 @@ private:
 
 		for (int i = 0; i < newDeck.numberOfCards; i++)
 		{
-			this->addCard(newDeck.cards[i]); //в this->cards добавяме всички елементи на newCards
+			this->addCard(newDeck.cards[i]); 
 		}
 	}
 

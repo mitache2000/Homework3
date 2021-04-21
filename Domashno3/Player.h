@@ -11,8 +11,8 @@ private:
 	char* name;
 	int wins;
 	int losses;
-	Deck<T>* deck1;
-	Deck<V>* deck2;
+	Deck<T> deck1;
+	Deck<V> deck2;
 	void copy(const Player& newPlayer)
 	{
 		this->name = new char[strlen(newPlayer.name) + 1];
@@ -21,8 +21,6 @@ private:
 		this->wins = newPlayer.wins;
 		this->losses = newPlayer.losses;
 
-		this->deck1 = new Deck<T>(newPlayer.deck1); //правим нов дек, като извикваме копи конструктора на дек
-		this->deck2 = new Deck<T>(newPlayer.deck2);
 	}
 
 	void erase() 
@@ -38,8 +36,6 @@ public:
 		this->name = (char*)newName;
 		this->wins = newWins;
 		this->losses = newLosses;
-		this->deck1 = new Deck<T>;
-		this->deck2 = new Deck<V>;
 	}
 
 	Player(const Player& newPlayer)
@@ -64,14 +60,16 @@ public:
 	}
 
 	void assignDeck1(Deck<T>& newDeck) {
-		for (int i = 0; i < newDeck.getSize(); i++) {
-			this->deck1->addCard(newDeck.drawCard());
-		}
+		/*for (int i = 0; i < newDeck.getSize(); i++) {
+			this->deck1.addCard(newDeck.drawCard());
+		}*/
+		deck1(newDeck);
 	}
 	void assignDeck2(Deck<V>& newDeck) {
-		for (int i = 0; i < newDeck.getSize(); i++) {
-			this->deck2->addCard(newDeck.drawCard());
-		}
+		/*for (int i = 0; i < newDeck.getSize(); i++) {
+			this->deck2.addCard(newDeck.drawCard());
+		}*/
+		deck2(newDeck);
 	}
 
 	char* getName() const
@@ -87,9 +85,9 @@ public:
 
 		if (randomNumber == 1)
 		{
-			return deck1->drawCard().getPower();
+			return deck1.drawCard().getPower();
 		}
-		return deck2->drawCard().getPower();
+		return deck2.drawCard().getPower();
 	}
 
 	void savePlayer(char* fileName)
